@@ -1,0 +1,91 @@
+.footerBackground {
+    border-top: 1px solid #D9D9D9;
+    background-color: white;
+    height: 10vh;
+    z-index: 100; /* Ajusta según la estructura de tus otros elementos */
+    position: relative; /* Asegura que esté en una capa superior */
+    overflow: hidden; /* Para cortar cualquier contenido desbordante */
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12rem;
+    position: relative;
+    padding-left: 10rem;
+}
+
+/* Estilos para cambiar flex-name a negro y bold en el botón activo */
+.footer-button.active .flex-name {
+    color: black;
+    font-weight: bold;
+}
+
+
+.footer-button {
+    position: relative;
+    background: none;
+    border: none;
+    padding-top: 1rem;
+    cursor: pointer;
+    width: 10%;
+    transition: border-color 0.3s ease;
+}
+
+.footer-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Animación en hover */
+.footer-button:hover::after {
+    transform: scaleX(1);
+}
+
+/* Animación en clic con .active */
+.footer-button.active::after {
+    transform: scaleX(1);
+}
+
+/* Retraer borde superior en el otro botón */
+.footer-button.retract::after {
+    transform: scaleX(0);
+}
+
+
+
+/* Div de animación */
+.animation-div1, .animation-div-2 {
+    position: absolute;
+    height: 10px;
+    background-color: black;
+    transition: transform 0.3s ease;
+}
+
+.flex-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-number {
+    text-align: start;
+    padding-top: .8rem;
+    color: #c0c0c0;
+    font-weight: bold;
+}
+
+.flex-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #c0c0c0;
+    text-align: start;
+    padding-top: 0.1rem;
+}

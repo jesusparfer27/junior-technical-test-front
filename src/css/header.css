@@ -1,0 +1,267 @@
+/* CSS General */
+.headerMenu {
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+
+.headerFlex {
+    display: flex;
+    justify-content: space-around;
+    gap: 60rem;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.toggleButton {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    border: 1px solid black;
+}
+
+.toggleButton{
+    border: 1px solid white;
+}
+
+.navContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 999; /* Mantener debajo del footerNav */
+}
+
+.navContainer.open {
+    transform: translateX(0);
+}
+
+.navContent {
+    display: flex;
+    height: 100%;
+}
+
+.nav {
+    width: 50%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding-left: 4rem;
+}
+
+/* Estilo para la lista de navegación (abrir animación) */
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(1200px); /* Mover más hacia abajo al inicio */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Apertura lenta */
+    margin-left: 10rem;
+    gap: 3rem;
+    padding-top: 10rem;
+    width: 25%;
+    font-size: 30px;
+    position: sticky;
+}
+
+.navList li.transform {
+    transform: translateY(-10px); /* Desplazar hacia arriba */
+    transition: transform 0.5s ease, margin-top 0.5s ease; /* Transición suave */
+    margin-top: 20px; /* Margen superior adicional */
+}
+
+/* Animación al mostrar la lista de navegación */
+.navList.show {
+    opacity: 1;
+    transform: translateY(0); /* Animación de subida */
+    
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Se vuelve visible */
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+.navList.show li{
+    animation: fadeIn 0.5s forwards; /* Cada elemento será visible con un retraso */
+
+}
+
+/* Animación rápida al cerrar la lista de navegación */
+.navList.close {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Cierre rápido */
+    opacity: 0;
+    transform: translateY(800px); /* Regresa más rápido hacia abajo */
+}
+
+.navList li {
+    color: white;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Inicialmente desplazado */
+    animation: fadeIn 0.5s forwards; /* Animación de entrada */
+}
+
+/* Cambiar el color de fondo solo en el hover */
+.navList li:hover {
+    background-color: transparent;
+}
+
+/* Submenú */
+/* Submenú */
+.submenu {
+    display: flex; /* Mostrar como flex */
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 1.2s ease-in-out; /* Transiciones suaves */
+    transform: translateY(-30px); /* Parte de una posición ligeramente arriba */
+    gap: 2rem;
+    font-size: 16px;
+    max-height: 0; /* Evitar que ocupe espacio cuando no se muestra */
+    overflow: hidden; /* Esconder contenido */
+}
+
+.submenu.show {
+    opacity: 1; /* Hacer visible */
+    transform: translateY(0); /* Desplazar a su posición original */
+    max-height: 300px; /* Ajustar según el contenido */
+    margin-top: .8rem;
+}
+
+.submenu.hide {
+    opacity: 0;
+    transform: translateY(-30px); /* Regresar a la posición inicial */
+    max-height: 0; /* Esconder el submenú */
+}
+
+
+.navList li:hover .submenu {
+    display: flex;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.submenu li {
+    color: #bdbcbc;
+}
+
+.submenu li:hover {
+    color: white;
+}
+
+/* Imagen que aparece al hacer hover */
+.imageContainer {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 27rem;
+    padding-bottom: 11rem;
+}
+
+.imageContainer img {
+    width: 80%;
+    height: auto;
+    transform: translateY(120%); /* Inicia fuera de la pantalla, por debajo */
+    opacity: 0; /* Inicialmente invisible */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Aplica transiciones suaves */
+}
+
+.imageContainer.show img {
+    transform: translateY(-30%); /* Termina más arriba de la posición original */
+    opacity: 1; /* Totalmente visible al finalizar el movimiento */
+}
+
+/* Control del efecto intermedio */
+.imageContainer.show img {
+    transform: translateY(10%); /* Al 50% del recorrido, estará a 60% de su posición inicial */
+    opacity: 0.8; /* Visible en un 50% cuando está en el 50% del trayecto */
+}
+
+/* Estilo para el logo */
+.headerLogo {
+    color: black; /* Color por defecto */
+    transition: color 0.3s ease, z-index 0.3s ease; /* Añadir transición */
+}
+
+.headerLogo.white {
+    color: white; /* Color cuando está hover */
+    position: relative; /* Asegurarse de que se pueda cambiar el z-index */
+    z-index: 1001; /* Aumentar el z-index para que esté por encima del navContainer */
+}
+
+/* Aumentar el z-index del footerNav para evitar conflictos */
+.footerNav {
+    list-style: none;
+    display: grid;
+    grid-template-rows: 50px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    padding-top: 10rem;
+    padding-left: 8rem;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(800px); /* Mover más hacia abajo al inicio */
+    transition: opacity 1.5s ease-in-out 1s, transform 1.5s ease-in-out .5s; /* Agregar delay de 1s */
+    z-index: 1002; /* Aumentar el z-index para que esté por encima de navList */
+    position: fixed; /* Fijar el footerNav */
+    bottom: 0; /* Asegurarse de que esté en la parte inferior */
+    left: 65px; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+}
+
+/* Animación cuando se abre el menú */
+.navContainer.open .footerNav {
+    opacity: 1;
+    transform: translateY(0); /* Sube cuando el nav se abre */
+}
+
+/* Animación rápida cuando se cierra el menú */
+.navContainer .footerNav.close {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(800px); /* Baja más rápido al cerrarse */
+}
+
+.footerNav li {
+    margin: 2rem;
+    opacity: 0.5;
+    padding-top: 6rem;
+}
+
+/* Asegúrate de que el footerNav no reciba márgenes ni padding al hacer hover */
+.navList li:hover + .footerNav {
+    margin: 0; /* Asegúrate de que no haya margen */
+    padding: 0; /* Asegúrate de que no haya padding */
+}
+
+/* Estilo para los elementos de la lista en footerNav */
+.footerNav li {
+    margin: 2rem;
+    opacity: 0.5;
+    padding-top: 6rem;
+    transition: color 0.3s ease; /* Añadir transición para el color */
+}
+
+/* Cambiar el color a blanco cuando se hace hover sobre los elementos del footerNav */
+.footerNav li:hover {
+    color: white; /* Cambia el color de texto a blanco */
+    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
+}
