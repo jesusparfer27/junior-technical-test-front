@@ -4,6 +4,8 @@ import { ErrorPage } from "../pages/ErrorPage";
 import { Layout } from '../Layout'
 
 // Despliegue del front1
+// Despliegue del front2
+
 
 const router = createBrowserRouter([
     {
