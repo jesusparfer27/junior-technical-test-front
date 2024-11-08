@@ -6,6 +6,8 @@ import '../css/furniture.scroll.css';
 
 // coment1
 // coment1
+// coment1
+
 
 
 export const FurnitureScroll = () => {
