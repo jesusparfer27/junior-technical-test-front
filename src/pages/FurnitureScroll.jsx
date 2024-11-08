@@ -8,6 +8,8 @@ export const FurnitureScroll = () => {
     const [furniture, setFurniture] = useState([]);
     const { furnitureByViewport, setFurnitureByViewport } = useIterativeContext();
     const { VITE_API, VITE_MONGO_ENDPOINT } = import.meta.env;
+    console.log(VITE_API)
+    console.log(VITE_MONGO_ENDPOINT)
 
     // Estado para manejar la transición de recogida
     const [isExiting, setIsExiting] = useState(false);
