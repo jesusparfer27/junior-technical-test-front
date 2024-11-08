@@ -26,7 +26,7 @@ export const FurnitureScroll = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch(`${VITE_API}`, {
+            const response = await fetch(`${VITE_API}${VITE_MONGO_ENDPOINT}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -57,7 +57,7 @@ export const FurnitureScroll = () => {
                         <p>{furniture_description}</p>
                     </div>
                     <div className="flex-right">
-                        <img src={`${VITE_API}`} alt="" />
+                        <img src={`${VITE_API}${image}`} alt="" />
                     </div>
                 </div>
             </div>
