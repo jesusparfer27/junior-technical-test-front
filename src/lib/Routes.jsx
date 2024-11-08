@@ -3,6 +3,7 @@ import { FurnitureScroll } from "../pages/FurnitureScroll";
 import { ErrorPage } from "../pages/ErrorPage";
 import { Layout } from '../Layout'
 
+// Despliegue del front1
 
 const router = createBrowserRouter([
     {
