@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { useIterativeContext } from '../context/IterativeContext';
 import '../css/furniture.scroll.css';
 
-// deploy1
-
+// coment1
 
 export const FurnitureScroll = () => {
     const [furniture, setFurniture] = useState([]);
