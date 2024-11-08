@@ -13,7 +13,7 @@ import '../css/furniture.scroll.css';
 export const FurnitureScroll = () => {
     const [furniture, setFurniture] = useState([]);
     const { furnitureByViewport, setFurnitureByViewport } = useIterativeContext();
-    const { VITE_API, VITE_MONGO_ENDPOINT, VITE_URLS_IMGS } = import.meta.env;
+    const { VITE_API, VITE_MONGO_ENDPOINT, VITE_URL_IMGS } = import.meta.env;
     console.log(VITE_API)
     console.log(VITE_MONGO_ENDPOINT)
 
@@ -57,7 +57,7 @@ export const FurnitureScroll = () => {
                         <p>{furniture_description}</p>
                     </div>
                     <div className="flex-right">
-                        <img src={`${VITE_URLS_IMGS}${image}`} alt="" />
+                        <img src={`${VITE_URL_IMGS}${image}`} alt="" />
                     </div>
                 </div>
             </div>
