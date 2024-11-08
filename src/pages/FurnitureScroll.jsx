@@ -5,6 +5,8 @@ import { useIterativeContext } from '../context/IterativeContext';
 import '../css/furniture.scroll.css';
 
 // coment1
+// coment1
+
 
 export const FurnitureScroll = () => {
     const [furniture, setFurniture] = useState([]);
