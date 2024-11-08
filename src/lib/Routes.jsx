@@ -3,6 +3,7 @@ import { FurnitureScroll } from "../pages/FurnitureScroll";
 import { ErrorPage } from "../pages/ErrorPage";
 import { Layout } from '../Layout'
 
+// prueba
 
 const router = createBrowserRouter([
     {
