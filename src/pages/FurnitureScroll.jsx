@@ -71,7 +71,7 @@ export const FurnitureScroll = () => {
                                         <p>{furniture_description}</p>
                                     </div>
                                     <div className="flex-right">
-                                        <img src={'https://junior-technical-test-back.vercel.app/silla_negra.png'} alt={designer} />
+                                        <img src={`${VITE_API}${VITE_IMG_URL_VERCEL}${image}`} alt={designer} />
                                     </div>
                                 </div>
                             </div>
