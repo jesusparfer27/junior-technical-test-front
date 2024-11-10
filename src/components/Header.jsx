@@ -130,7 +130,7 @@ const Header = () => {
                         {furnitureNav.map((furniture) => (
                             <img
                                 key={furniture._id}
-                                src={`${VITE_API}${furniture.img}`}
+                                src={`${VITE_API}/${furniture.img}`}
                                 alt={`Furniture ${furniture._id}`}
                                 className="furnitureImage"
                             />
