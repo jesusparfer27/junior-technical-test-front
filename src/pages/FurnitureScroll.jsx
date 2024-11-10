@@ -7,7 +7,7 @@ import '../css/furniture.scroll.css';
 export const FurnitureScroll = () => {
     const [furniture, setFurniture] = useState([]);
     const { furnitureByViewport, setFurnitureByViewport } = useIterativeContext();
-    const { VITE_API, VITE_MONGO_ENDPOINT } = import.meta.env;
+    const { VITE_API, VITE_MONGO_ENDPOINT, VITE_IMG_URL_VERCEL } = import.meta.env;
 
     // Estado para manejar la transición de recogida
     const [isExiting, setIsExiting] = useState(false);
@@ -70,7 +70,7 @@ export const FurnitureScroll = () => {
                                         <p>{furniture_description}</p>
                                     </div>
                                     <div className="flex-right">
-                                        <img src={image} alt="" />
+                                        <img src={`${VITE_IMG_URL_VERCEL}${image}`} alt="" />
                                     </div>
                                 </div>
                             </div>
