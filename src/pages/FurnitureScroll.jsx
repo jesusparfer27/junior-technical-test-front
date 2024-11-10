@@ -70,7 +70,7 @@ export const FurnitureScroll = () => {
                                         <p>{furniture_description}</p>
                                     </div>
                                     <div className="flex-right">
-                                        <img src="silla_negra.png" alt="" />
+                                        <img src={`${VITE_API}${image}`} alt={designer} />
                                     </div>
                                 </div>
                             </div>
