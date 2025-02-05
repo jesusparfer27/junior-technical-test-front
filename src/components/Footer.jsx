@@ -4,7 +4,7 @@ import '../css/footer.css';
 
 const Footer = ({ onViewportChange }) => {
     const { setFurnitureByViewport } = useIterativeContext();
-    const [activeButton, setActiveButton] = useState(null);
+    const [activeButton, setActiveButton] = useState(null); 
     const [hoveredButton, setHoveredButton] = useState(null); // Nuevo estado para hover
 
     const handleButtonClick = (buttonId, newViewport) => {
