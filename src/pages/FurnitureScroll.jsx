@@ -20,7 +20,7 @@ export const FurnitureScroll = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch(`${VITE_API}${VITE_MONGO_ENDPOINT}`, {
+            const response = await fetch(`${VITE_API}${VITE_MONGO_ENDPOINT}`, { 
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
