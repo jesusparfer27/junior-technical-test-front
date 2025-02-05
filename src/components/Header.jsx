@@ -11,7 +11,7 @@ const Header = () => {
     const [hoverElement1, setHoverElement1] = useState(false);
     const [transformElement1, setTransformElement1] = useState(false);
 
-    const { VITE_API, VITE_MONGO_ENDPOINT, VITE_ENDPOINT_HEADER_IMAGE } = import.meta.env;
+    const { VITE_API, VITE_MONGO_ENDPOINT, VITE_ENDPOINT_HEADER_IMAGE} = import.meta.env;
 
     useEffect(() => {
         getData();
