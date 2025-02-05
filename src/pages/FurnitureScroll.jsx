@@ -12,7 +12,7 @@ export const FurnitureScroll = () => {
     const { VITE_API, VITE_MONGO_ENDPOINT, VITE_IMG_URL_VERCEL, VITE_LINK_IMAGE } = import.meta.env;
 
     // Estado para manejar la transición de recogida
-    const [isExiting, setIsExiting] = useState(false);
+    const [isExiting, setIsExiting] = useState(false); 
 
     useEffect(() => {
         getData();
